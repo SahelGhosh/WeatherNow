@@ -37,7 +37,7 @@ function formatTime(unixTimestamp, timezoneOffset) {
     return date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 }
 
-// Get city geolocation data
+
 async function getData() {
     let url_2 = `https://api.openweathermap.org/geo/1.0/direct?q=${city_name}&appid=8344c2804120b4cb6b03e5a6e1e76163`;
     const res = await fetch(url_2);
@@ -46,7 +46,7 @@ async function getData() {
     return { lat: data[0].lat, lon: data[0].lon };
 }
 
-// Get weather data by lat/lon
+
 async function getWeather(lat, lon) {
     let url_1 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=8344c2804120b4cb6b03e5a6e1e76163`;
     let res = await fetch(url_1);
@@ -60,10 +60,10 @@ function updateUI(finalData) {
 
     let newBackground;
     switch (weatherMain) {
-        case 'clear': newBackground = 'linear-gradient(135deg, #87CEEB, #ffffff)'; break;
-        case 'clouds': newBackground = 'linear-gradient(135deg, #bdc3c7, #2c3e50)'; break;
+        case 'clear': newBackground = 'linear-gradient(135deg, #87CEEB,rgb(0, 191, 255))'; break;
+        case 'clouds': newBackground = 'linear-gradient(135deg, #bdc3c7,rgb(41, 101, 160))'; break;
         case 'rain': newBackground = 'linear-gradient(135deg, #4b6cb7, #182848)'; break;
-        case 'snow': newBackground = 'linear-gradient(135deg, #e6dada, #272c34)'; break;
+        case 'snow': newBackground = 'linear-gradient(135deg, #e6dada,rgb(39, 44, 52))'; break;
         case 'thunderstorm': newBackground = 'linear-gradient(135deg, #304352, #d7d2cc)'; break;
         case 'drizzle': newBackground = 'linear-gradient(135deg, #74ebd5, #9face6)'; break;
         default: newBackground = 'linear-gradient(135deg, #a8c0ff, #3f558d)';
