@@ -1,0 +1,255 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url("./rainbow-1467988.jpg");
+  background-size: cover;
+  transition: all 0.5s ease-in-out;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  height: 100vh;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.title {
+  font-family: 'Bungee', impact;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: white;
+  text-shadow:
+    -1.5px -1.5px 0 black,
+    1.5px -1.5px 0 black,
+    -1.5px 1.5px 10px black,
+    1.5px 1.5px 0 black;
+}
+
+.custom-btn {
+  padding: 14px 28px;
+  font-size: 18px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.03);
+}
+
+.input-group {
+  display: flex;
+}
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+#search::placeholder {
+  font-weight: bold;
+  font-size: 18px;
+  color: #888;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Loader */
+svg {
+  display: none;
+  width: 60px;
+  height: 60px;
+  margin-top: 15px;
+  transform-origin: center;
+  animation: rotate4 2s linear infinite;
+}
+
+circle {
+  fill: none;
+  stroke: #007BFF;
+  stroke-width: 6;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash4 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate4 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash4 {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dashoffset: -125px;
+  }
+}
+
+/* Search box positioning */
+.mb-3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  animation: myTransition 1s ease-in-out;
+  z-index: 20;
+}
+
+.main.moved .mb-3 {
+  position: relative;          /* becomes a normal block */
+  top: 0;
+  left: 0;
+  transform: none;
+  margin: 20px auto 40px auto; /* gap below search bar */
+  width: 90%;
+}
+
+/* Fade animation */
+@keyframes myTransition {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Weather card */
+.outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.outer_moved {
+  height: 90%;
+  width: 90%;
+  display: flex;
+  align-items: flex-start; /* push card below search */
+  justify-content: center;
+}
+
+.weather_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(30, 30, 30, 0.7));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s ease, opacity 0.5s ease-in-out;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 20px; /* extra gap below search box */
+}
+
+.city_name {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
+}
+
+.weather_icon {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.weather_desc {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: white;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.data_1 {
+  font-size: clamp(4rem, 10vw, 6rem);
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 5px;
+}
+
+.feels_like {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: #e0e0e0;
+}
+
+.other_details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.detail-item {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.1em);
+  font-weight: bold;
+  color: #f0f0f0;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 10px;
+  white-space: nowrap;
+  transition: transform 0.2s ease;
+}
+
+.detail-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  height: 60px;
+  width: 60px;
+  margin: 0px 10px 0px 10px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}

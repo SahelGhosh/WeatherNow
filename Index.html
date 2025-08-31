@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Now</title>
+  <link rel="icon" href="10968452.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="main">
+    <div class="mb-3">
+      <div class="header">
+        <img class="logo" src="./10968452.png" alt="image">
+        <h1 class="title">Weather Now</h1>
+      </div>
+
+      <br>
+      <div class="search-box">
+        <div class="input-group">
+          <input class="form-control form-control-lg" type="text" id="search" placeholder="Enter city">
+          <button type="button" class="custom-btn">Search</button>
+        </div>
+        <svg viewBox="0 0 100 100">
+          <circle r="45" cy="50" cx="50"></circle>
+        </svg>
+      </div>
+    </div>
+
+    <div id="outer" class="outer">
+      <div class="weather_card">
+        <h2 class="city_name"></h2>
+        <img class="weather_icon" src="" alt="weather icon">
+        <h3 class="weather_desc"></h3>
+
+        <div class="temp">
+          <h4 class="data_1"></h4>
+          <h4 class="feels_like"></h4>
+        </div>
+
+        <div class="other_details">
+          <h4 class="detail-item temp_max"></h4>
+          <h4 class="detail-item temp_min"></h4>
+          <h4 class="detail-item humidity"></h4>
+          <h4 class="detail-item pressure"></h4>
+          <h4 class="detail-item wind_speed"></h4>
+          <h4 class="detail-item wind_dir"></h4>
+          <h4 class="detail-item sunrise"></h4>
+          <h4 class="detail-item sunset"></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
