@@ -6,6 +6,10 @@ let btn = document.querySelector(".custom-btn"); // fixed selector
 let inp = document.querySelector('#search'); // target input by id
 let loader = document.querySelector('svg');
 let outer = document.querySelector("#outer");
+let social = document.querySelector('.social') //social media bar
+let facebook = document.querySelector('.fa-facebook');
+let instagram = document.querySelector('.fa-instagram');
+let linkedin = document.querySelector('.fa-linkedin');
 
 // Select all detail items
 let detailItems = {
@@ -31,7 +35,7 @@ function degToCompass(num) {
     return arr[val % 16];
 }
 
-// Convert Unix timestamp + offset into readable time
+
 function formatTime(unixTimestamp, timezoneOffset) {
     const date = new Date((unixTimestamp + timezoneOffset) * 1000);
     return date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
@@ -60,14 +64,18 @@ function updateUI(finalData) {
 
     let newBackground;
     switch (weatherMain) {
-        case 'clear': newBackground = 'linear-gradient(135deg, #87CEEB,rgb(0, 191, 255))'; break;
-        case 'clouds': newBackground = 'linear-gradient(135deg, #bdc3c7,rgb(41, 101, 160))'; break;
-        case 'rain': newBackground = 'linear-gradient(135deg, #4b6cb7, #182848)'; break;
-        case 'snow': newBackground = 'linear-gradient(135deg, #e6dada,rgb(39, 44, 52))'; break;
-        case 'thunderstorm': newBackground = 'linear-gradient(135deg, #304352, #d7d2cc)'; break;
-        case 'drizzle': newBackground = 'linear-gradient(135deg, #74ebd5, #9face6)'; break;
-        default: newBackground = 'linear-gradient(135deg, #a8c0ff, #3f558d)';
+        case 'clear': newBackground = "url('./sky/clear.jpg')"; break;
+        case 'clouds': newBackground = "url('./sky/cloudy.jpg')"; break;
+        case 'rain': newBackground = "url('./sky/rainy.jpg')"; break;
+        case 'snow': newBackground = "url('./sky/snow.jpg')"; break;
+        case 'thunderstorm': newBackground = "url('./sky/thunderstorm.jpg')"; break;
+        case 'drizzle': newBackground = "url('./sky/clear.jpg')"; break;
+        default: newBackground = "url('./sky/clear.jpg')";
     }
+    document.body.style.backgroundImage = newBackground;
+    document.body.style.backgroundSize = "cover";         // Ensures full coverage
+    document.body.style.backgroundPosition = "center";    // Centers the image
+    document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.background = newBackground;
 
     detailItems.city_name.innerText = finalData.name;
@@ -95,9 +103,9 @@ btn.addEventListener("click", async function () {
         alert("Please enter a city name.");
         return;
     }
-
+    social.style.display = "none";
     city_name = inp.value;
-    loader.style.display = "block"; 
+    loader.style.display = "block";
     card.style.opacity = 0;
 
     try {
@@ -105,7 +113,7 @@ btn.addEventListener("click", async function () {
         const finalData = await getWeather(lat, lon);
 
         loader.style.display = "none";
-        document.querySelector('.main').classList.add('moved'); // search box goes top
+        document.querySelector('.main').classList.add('moved');
         outer.classList.remove('outer');
         outer.classList.add('outer_moved');
         card.style.display = "flex";
@@ -115,12 +123,22 @@ btn.addEventListener("click", async function () {
 
     } catch (err) {
         loader.style.display = "none";
-        main.style.display = "block"; // show search again
-        document.querySelector('.main').classList.remove('moved'); // reset position
+        main.style.display = "block";
+        document.querySelector('.main').classList.remove('moved');
         outer.classList.remove('outer_moved');
         outer.classList.add('outer');
         alert(`Error: ${err.message}`);
         console.error(err);
     }
 });
+
+facebook.addEventListener("click", () => {
+    window.location.href = "https://www.facebook.com/Sahel.Ghosh";
+})
+instagram.addEventListener("click", () => {
+    window.location.href = "https://www.instagram.com/sahelghosh7/";
+})
+linkedin.addEventListener("click", () => {
+    window.location.href = "www.linkedin.com/in/sahel-ghosh-253356281";
+})
 

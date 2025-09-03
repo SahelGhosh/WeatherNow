@@ -3,13 +3,14 @@ body {
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background-image: url("./rainbow-1467988.jpg");
+  background-image: url("./WallpaperDog-5443626.jpg");
   background-size: cover;
   transition: all 0.5s ease-in-out;
   font-family: 'Montserrat', sans-serif;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -23,7 +24,7 @@ body, html {
 
 .title {
   font-family: 'Bungee', impact;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(4rem, 5vw, 3rem);
   color: white;
   text-shadow:
     -1.5px -1.5px 0 black,
@@ -62,6 +63,7 @@ body, html {
   align-items: center;
   gap: 10px;
   transition: all 0.5s ease-in-out;
+  box-shadow: 10px 10px 20px;
 }
 
 #search::placeholder {
@@ -102,10 +104,12 @@ circle {
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
   }
+
   50% {
     stroke-dasharray: 90, 200;
     stroke-dashoffset: -35px;
   }
+
   100% {
     stroke-dashoffset: -125px;
   }
@@ -123,11 +127,13 @@ circle {
 }
 
 .main.moved .mb-3 {
-  position: relative;          /* becomes a normal block */
+  position: relative;
+  /* becomes a normal block */
   top: 0;
   left: 0;
   transform: none;
-  margin: 20px auto 40px auto; /* gap below search bar */
+  margin: 20px auto 40px auto;
+  /* gap below search bar */
   width: 90%;
 }
 
@@ -137,6 +143,7 @@ circle {
     opacity: 0;
     transform: translate(-50%, -60%);
   }
+
   100% {
     opacity: 1;
     transform: translate(-50%, -50%);
@@ -156,7 +163,8 @@ circle {
   height: 90%;
   width: 90%;
   display: flex;
-  align-items: flex-start; /* push card below search */
+  align-items: flex-start;
+  /* push card below search */
   justify-content: center;
 }
 
@@ -170,7 +178,7 @@ circle {
   width: 90%;
   max-width: 600px;
   border-radius: 25px;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(30, 30, 30, 0.7));
+  background: linear-gradient(135deg, rgba(223, 11, 11, 0.8), rgba(201, 201, 14, 0.7));
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -178,7 +186,8 @@ circle {
   transition: transform 0.3s ease, opacity 0.5s ease-in-out;
   opacity: 0;
   overflow: hidden;
-  margin-top: 20px; /* extra gap below search box */
+  margin-top: 20px;
+  /* extra gap below search box */
 }
 
 .city_name {
@@ -252,4 +261,50 @@ circle {
   flex-direction: row;
   justify-content: center;
   width: 100%;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  height: 4em;
+  width: 100%;
+}
+
+
+.fa-facebook {
+  font-size: 28px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: inherit;
+  color: white;
+}
+.fa-facebook:hover{
+  transform: scale(1.2);
+}
+
+.fa-instagram {
+  font-size: 28px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: inherit;
+  color: #e1306c;
+}
+.fa-instagram:hover{
+  transform: scale(1.2);
+}
+
+.fa-linkedin {
+  font-size: 28px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: inherit;
+  color: aliceblue;
+}
+.fa-linkedin:hover{
+  transform: scale(1.2);
 }
