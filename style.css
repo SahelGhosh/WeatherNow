@@ -55,15 +55,16 @@ html {
 
 .input-group {
   display: flex;
+  box-shadow: 10px 10px 20px;
 }
 
 .search-box {
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   transition: all 0.5s ease-in-out;
-  box-shadow: 10px 10px 20px;
 }
 
 #search::placeholder {
@@ -178,7 +179,7 @@ circle {
   width: 90%;
   max-width: 600px;
   border-radius: 25px;
-  background: linear-gradient(135deg, rgba(223, 11, 11, 0.8), rgba(201, 201, 14, 0.7));
+  background: rgba(rgb(189, 20, 20), green, blue, alpha);
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -221,7 +222,7 @@ circle {
 
 .feels_like {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
-  color: #e0e0e0;
+  color: #050505;
 }
 
 .other_details {
@@ -237,11 +238,12 @@ circle {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(0.9rem, 2vw, 1.1em);
   font-weight: bold;
-  color: #f0f0f0;
+  color: black;
   background: rgba(255, 255, 255, 0.1);
   padding: 10px 15px;
   border-radius: 10px;
   white-space: nowrap;
+  box-shadow: 2px 2px 10px;
   transition: transform 0.2s ease;
 }
 
@@ -307,4 +309,7 @@ circle {
 }
 .fa-linkedin:hover{
   transform: scale(1.2);
+}
+.font-color{
+
 }

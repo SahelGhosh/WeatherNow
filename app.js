@@ -99,11 +99,11 @@ function updateUI(finalData) {
 }
 
 btn.addEventListener("click", async function () {
+    social.style.display = "none";
     if (inp.value === "") {
         alert("Please enter a city name.");
         return;
     }
-    social.style.display = "none";
     city_name = inp.value;
     loader.style.display = "block";
     card.style.opacity = 0;
