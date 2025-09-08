@@ -141,6 +141,6 @@ instagram.addEventListener("click", () => {
     window.location.href = "https://www.instagram.com/sahelghosh7/";
 })
 linkedin.addEventListener("click", () => {
-    window.location.href = "www.linkedin.com/in/sahel-ghosh-253356281";
+    window.location.href = "https://www.linkedin.com/in/sahel-ghosh/";
 })
 
