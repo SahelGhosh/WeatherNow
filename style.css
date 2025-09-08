@@ -269,7 +269,7 @@ circle {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2em;
+  margin-top: 0.5em;
   height: 4em;
   width: 100%;
 }
@@ -283,7 +283,8 @@ circle {
   z-index: inherit;
   color: white;
 }
-.fa-facebook:hover{
+
+.fa-facebook:hover {
   transform: scale(1.2);
 }
 
@@ -295,7 +296,8 @@ circle {
   z-index: inherit;
   color: #e1306c;
 }
-.fa-instagram:hover{
+
+.fa-instagram:hover {
   transform: scale(1.2);
 }
 
@@ -307,6 +309,28 @@ circle {
   z-index: inherit;
   color: aliceblue;
 }
-.fa-linkedin:hover{
+
+.fa-linkedin:hover {
   transform: scale(1.2);
+}
+
+.sahel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3.5em;
+}
+
+.sahel p {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1em;
+}
+
+.sahel h4 {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2em;
 }

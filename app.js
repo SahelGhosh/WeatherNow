@@ -10,6 +10,7 @@ let social = document.querySelector('.social') //social media bar
 let facebook = document.querySelector('.fa-facebook');
 let instagram = document.querySelector('.fa-instagram');
 let linkedin = document.querySelector('.fa-linkedin');
+let sahel = document.querySelector('.sahel');
 
 // Select all detail items
 let detailItems = {
@@ -100,6 +101,7 @@ function updateUI(finalData) {
 
 btn.addEventListener("click", async function () {
     social.style.display = "none";
+    sahel.style.display = "none";
     if (inp.value === "") {
         alert("Please enter a city name.");
         return;
