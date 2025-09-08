@@ -89,7 +89,7 @@ function updateUI(finalData) {
     detailItems.temp_min.innerText = `Min Temp: ${Math.round(finalData.main.temp_min)}°C`;
     detailItems.humidity.innerText = `Humidity: ${finalData.main.humidity}%`;
     detailItems.pressure.innerText = `Pressure: ${finalData.main.pressure} hPa`;
-
+    detailItems.pressure.style.fontSize = "16px"; 
     detailItems.wind_speed.innerText = `Wind: ${finalData.wind.speed} m/s`;
     detailItems.wind_dir.innerText = `Direction: ${degToCompass(finalData.wind.deg)}`;
 
